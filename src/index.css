@@ -54,6 +54,53 @@ body::before:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m3.94.694-.348 1.97M7.116 7.341l-1.257-.221m1.257.221L5.86 18.047m7.306-12.658L7.116 4.342'/%3E%3C/svg%3E");
 }
 
+/* Custom Table Styles */
+.custom-table {
+  @apply w-full border-collapse bg-background/95 rounded-lg overflow-hidden shadow-lg;
+}
+
+.custom-table th {
+  @apply bg-muted/50 text-muted-foreground p-2 text-left;
+}
+
+.custom-table td {
+  @apply p-2 border-t border-muted;
+}
+
+.custom-table tr:hover {
+  @apply bg-muted/20;
+}
+
+/* GitHub Fork Ribbon */
+.github-fork-ribbon {
+  position: fixed;
+  top: 2.5rem;
+  width: 12.1rem;
+  height: 2rem;
+  background-color: #000;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: bold;
+  transform: rotate(45deg);
+  z-index: 9999;
+  transition: background-color 0.2s;
+}
+
+.github-fork-ribbon:hover {
+  background-color: #333;
+}
+
+.github-fork-ribbon.right {
+  right: -3rem;
+}
+
+.github-fork-ribbon.left {
+  left: -3rem;
+  transform: rotate(-45deg);
+}
 
 @keyframes slide {
   from {
