@@ -21,9 +21,11 @@ export const createAiPlayer = (type, id, name, initialBitcoin, tableInfo, evalua
     const canAffordMore = parseFloat(aiState.bitcoin) > callAmount;
 
     let estimatedStrength = 0;
-    const handEvalCards = [...aiState.cards, ...communityCards.slice(0, stage === POKER_STAGES.FLOP ? 3 : stage === POKER_STAGES.TURN ? 4 : 5)];
+    const cardsForEval = communityCards ? communityCards : [];
+    const currentStage = stage !== undefined ? stage : POKER_STAGES.PRE_FLOP;
+    const handEvalCards = [...aiState.cards, ...cardsForEval.slice(0, currentStage === POKER_STAGES.FLOP ? 3 : currentStage === POKER_STAGES.TURN ? 4 : 5)];
     if (handEvalCards.length >= 2) {
-      const simpleEval = evaluateHand(aiState.cards, communityCards.slice(0, stage === POKER_STAGES.FLOP ? 3 : stage === POKER_STAGES.TURN ? 4 : 5));
+      const simpleEval = evaluateHand(aiState.cards, cardsForEval.slice(0, currentStage === POKER_STAGES.FLOP ? 3 : currentStage === POKER_STAGES.TURN ? 4 : 5));
       if (simpleEval.rank >= 3) estimatedStrength = 2;
       else if (simpleEval.rank >= 1) estimatedStrength = 1;
     }
