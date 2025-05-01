@@ -25,3 +25,5 @@ To ensure the continued health and smooth operation of this project, follow thes
 *   **Documentation:** Keep the `README.md` file updated with relevant information about the project, including installation instructions, usage examples, and deployment guidelines.
 *   **Logging and Error Handling:** Implement robust logging and error handling to facilitate debugging and monitoring.
 *   **Performance Monitoring:** Monitor the application's performance and identify potential bottlenecks.
+
+write detailed and verbose documentation
